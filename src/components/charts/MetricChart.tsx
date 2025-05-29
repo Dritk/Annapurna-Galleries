@@ -15,14 +15,17 @@ import { Context } from "../data/context";
 
 interface MetricChartProps {
   title: string;
-  queryKey: any[];
-  queryFn: (filter: "yearly" | "monthly" | "weekly") => Promise<any>;
+  queryKey: (string | number)[];
+  queryFn: (
+    filter: "yearly" | "monthly" | "weekly"
+  ) => Promise<Record<string, any[]>>;
   valueKey: string;
-  labelKey: (item: any) => string;
+  labelKey: (item: Record<string, any>) => string;
   yAxisLabel: string;
   color: string;
   dataKey?: string; 
 }
+
 
 const MetricChart = ({
   title,
@@ -32,7 +35,7 @@ const MetricChart = ({
   labelKey,
   yAxisLabel,
   color,
-  dataKey = "like",
+  dataKey = "data",
 }: MetricChartProps) => {
   const { timeFilter, setTimeFilter } = useContext(Context);
 
@@ -96,7 +99,8 @@ const MetricChart = ({
             dataKey="value"
             stroke={color}
             strokeWidth={2}
-            fill={color + "55"} 
+           fill={color}
+         fillOpacity={0.3}
           />
         </AreaChart>
       </ResponsiveContainer>
