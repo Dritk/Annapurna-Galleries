@@ -34,16 +34,16 @@ const Notification: React.FC = () => {
   const renderIcon = (status: string) => {
     switch (status) {
       case "Completed":
-        return <img src="/completeOrderIcon.png" alt="Complete Order" />;
+        return <img src="/completeordericon.png" alt="Complete Order" />;
       case "Payment Pending":
-        return <img src="/pendingOrderIcon.png" alt="Pending Order" />;
+        return <img src="/pendingordericon.png" alt="Pending Order" />;
       case "Return Accepted":
-        return <img src="/returnOrderIcon.png" alt="Return Order" />;
+        return <img src="/returnordericon.png" alt="Return Order" />;
       case "Cancelled":
       case "Return Rejected":
-        return <img src="/cancelOrderIcon.png" alt="Cancel Order" />;
+        return <img src="/cancelordericon.png" alt="Cancel Order" />;
       default:
-        return <img src="/pendingOrderIcon.png" alt="Pending Order" />;
+        return <img src="/pendingordericon.png" alt="Pending Order" />;
     }
   };
 

@@ -44,11 +44,20 @@ export const supplierLikesData = async (
   return data;
 };
 
-export const productSalesData = async (
+export const productLikeData = async (
   filter: "yearly" | "monthly" | "weekly"
 ) => {
   const { data } = await axiosInstance.get(
     `/admin/home/overview/productLikes?filter=${filter}`
+  );
+  return data;
+};
+
+export const productVisitData = async (
+  filter: "yearly" | "monthly" | "weekly"
+) => {
+  const { data } = await axiosInstance.get(
+    `/admin/home/overview/productVisits?filter=${filter}`
   );
   return data;
 };
@@ -74,3 +83,4 @@ export const fetchSupplierLikeDetails = async (
 };
 
 //vagiho8046@avulos.com
+//https://devapi.annapurnagalleries.com/api/admin/home/analytics/productsales/yearly?value=0
